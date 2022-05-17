@@ -1,7 +1,7 @@
 package histogram
 
 import (
-	"github.com/Ernyoke/Imger/utils"
+	"github.com/danhab99/Imger/utils"
 	"image"
 	"image/color"
 )
