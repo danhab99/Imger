@@ -49,8 +49,8 @@ func CannyGray(img *image.Gray, lower float64, upper float64, radius float64, si
 
 // CannyRGBA computes the edges of a given RGBA image using the Canny edge detection algorithm. The returned image is a
 // grayscale image represented on 8 bits.
-func CannyRGBA(img *image.RGBA, lower float64, upper float64, kernelSize uint) (*image.Gray, error) {
-	return CannyGray(grayscale.Grayscale(img), lower, upper, kernelSize)
+func CannyRGBA(img *image.RGBA, lower float64, upper float64, radius float64, sigma float64) (*image.Gray, error) {
+	return CannyGray(grayscale.Grayscale(img), lower, upper, radius, sigma)
 }
 
 func gradientAndOrientation(vertical *image.Gray, horizontal *image.Gray) ([][]float64, [][]float64, error) {
