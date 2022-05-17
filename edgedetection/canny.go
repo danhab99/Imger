@@ -13,10 +13,10 @@ import (
 
 // CannyGray computes the edges of a given grayscale image using the Canny edge detection algorithm. The returned image
 // is a grayscale image represented on 8 bits.
-func CannyGray(img *image.Gray, lower float64, upper float64, kernelSize uint) (*image.Gray, error) {
+func CannyGray(img *image.Gray, lower float64, upper float64, radius uint, sigma uint) (*image.Gray, error) {
 
 	// blur the image using Gaussian filter
-	blurred, err := blur.GaussianBlurGray(img, float64(kernelSize), 1, padding.BorderConstant)
+	blurred, err := blur.GaussianBlurGray(img, radius, sigma, padding.BorderConstant)
 	if err != nil {
 		return nil, err
 	}
